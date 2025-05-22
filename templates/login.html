@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}會員登入{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">會員登入</h2>
+
+  <form method="POST" action="{{ url_for('login') }}">
+    <div class="mb-3 text-start">
+      <label for="email" class="form-label">電子郵件</label>
+      <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div class="mb-3 text-start">
+      <label for="password" class="form-label">密碼</label>
+      <input type="password" class="form-control" id="password" name="password" required placeholder="輸入您的密碼">
+    </div>
+    <div class="text-center">
+      <button type="submit" class="btn btn-primary">登入</button>
+    </div>
+  </form>
+</div>
+{% endblock %}

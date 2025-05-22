@@ -1,0 +1,9 @@
+.container {
+  max-width: 500px;
+}
+form {
+  margin: auto;
+}
+.text-danger {
+  color: #dc3545;
+}

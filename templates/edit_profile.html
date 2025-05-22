@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}編輯個人資料{% endblock %}
+{% block content %}
+<div class="container mt-4">
+  <h2 class="mb-4 text-center">編輯個人資料</h2>
+  <form method="POST" action="{{ url_for('edit_profile', iid=user.iid) }}">
+    <div class="mb-3">
+      <label for="username" class="form-label">用戶名</label>
+      <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" readonly>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">電子郵件</label>
+      <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">密碼</label>
+      <input type="password" class="form-control" id="password" name="password" value="{{ user.password }}" required>
+    </div>
+    <div class="mb-3">
+      <label for="phone" class="form-label">手機</label>
+      <input type="tel" class="form-control" id="phone" name="phone" value="{{ user.phone }}">
+    </div>
+    <div class="mb-3">
+      <label for="birthdate" class="form-label">出生年月日</label>
+      <input type="date" class="form-control" id="birthdate" name="birthdate" value="{{ user.birthdate }}">
+    </div>
+    <div class="mb-3 text-center">
+      <button type="submit" class="btn btn-primary">儲存</button>
+      <a href="{{ url_for('welcome', iid=user.iid) }}" class="btn btn-secondary">離開</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
